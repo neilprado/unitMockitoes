@@ -10,10 +10,6 @@ public class Filme {
     private String nome;
     private int quantidade;
     private double valor;
-    @ManyToOne
-    private Cliente cliente;
-
-    public Filme() {}
 
     public Filme(String nome, int quantidade, double valor) {
         this.nome = nome;
@@ -51,13 +47,5 @@ public class Filme {
 
     public void setValor(double valor) {
         this.valor = valor;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 }
