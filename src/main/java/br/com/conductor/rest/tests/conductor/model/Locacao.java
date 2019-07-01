@@ -1,25 +1,24 @@
 package br.com.conductor.rest.tests.conductor.model;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Locacao {
     private Long id;
-    private List<Filme> filmes = new ArrayList();
+    private Filme filme;
     private Cliente cliente;
     private Date dataLocacao;
     private Date dataRetorno;
     private double valor;
 
-    public Locacao() {}
-
-    public Locacao(List<Filme> filmes, Cliente cliente, Date dataLocacao, Date dataRetorno, double valor) {
-        this.filmes = filmes;
+    public Locacao(Filme filmes, Cliente cliente, Date dataLocacao, Date dataRetorno, double valor) {
+        this.filme = filmes;
         this.cliente = cliente;
         this.dataLocacao = dataLocacao;
         this.dataRetorno = dataRetorno;
         this.valor = valor;
+    }
+
+    public Locacao() {
     }
 
     public Long getId() {
@@ -30,12 +29,12 @@ public class Locacao {
         this.id = id;
     }
 
-    public List<Filme> getFilmes() {
-        return filmes;
+    public Filme getFilme() {
+        return filme;
     }
 
-    public void setFilmes(List<Filme> filmes) {
-        this.filmes = filmes;
+    public void setFilme(Filme filme) {
+        this.filme = filme;
     }
 
     public Cliente getCliente() {

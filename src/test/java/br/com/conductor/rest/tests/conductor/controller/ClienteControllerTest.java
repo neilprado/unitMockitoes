@@ -3,7 +3,6 @@ package br.com.conductor.rest.tests.conductor.controller;
 import br.com.conductor.rest.tests.conductor.model.Cliente;
 import br.com.conductor.rest.tests.conductor.repository.ClienteRepository;
 import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;

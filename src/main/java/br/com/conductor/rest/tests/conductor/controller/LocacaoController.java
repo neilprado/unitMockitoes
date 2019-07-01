@@ -25,9 +25,13 @@ public class LocacaoController {
     FilmeRepository filmeDAO;
 
     public Locacao criarLocacao(@RequestBody Locacao locacao) throws ResourceNotFoundException {
-        Cliente cliente = clienteDAO.findById(locacao.getCliente().getId()).orElseThrow(
+        clienteDAO.findById(locacao.getCliente().getId()).orElseThrow(
                 () -> new ResourceNotFoundException("Usuário não encontrado"));
-
+        filmeDAO.findById(locacao.getFilme().getId()).orElseThrow(
+                () -> new ResourceNotFoundException("Filme não encontrado"));
+        if(locacao.getFilme().getQuantidade() == 0){
+            throw new ResourceNotFoundException("Não há estoque de filmes");
+        }
         return locacaoDAO.save(locacao);
     }
 
